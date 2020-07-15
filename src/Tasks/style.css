@@ -1,0 +1,58 @@
+.tasks__header {
+  margin: 0;
+  padding: 20px;
+}
+
+@media (max-width: 767px) {
+  .tasks__header {
+    font-size: 20px;
+  }
+}
+
+.tasks__list {
+  padding: 20px;
+  margin-top: 25px;
+  list-style-type: none;
+}
+
+.js-tasks__list-item {
+  padding: 10px;
+  border-bottom: 2px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+}
+
+.tasks__list-item--hidden {
+  display: none;
+}
+
+.js-done {
+  height: 30px;
+  width: 30px;
+  background-color: green;
+  border: none;
+  color: green;
+  flex-shrink: 0;
+}
+
+.js-done--ticked {
+  color: white;
+}
+
+.js-taskContent {
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.js-taskContent--done {
+  text-decoration: line-through;
+}
+
+.js-remove {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border: none;
+  color: white;
+  flex-shrink: 0;
+}

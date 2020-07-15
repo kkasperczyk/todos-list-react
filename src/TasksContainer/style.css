@@ -1,0 +1,12 @@
+.tasks__container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+@media (max-width: 767px) {
+  .tasks__container {
+    grid-template-columns: 1fr;
+    padding-bottom: 20px;
+  }
+}
