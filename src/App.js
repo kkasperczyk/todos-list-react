@@ -7,6 +7,7 @@ import TasksSection from "./TasksSection";
 import TasksContainer from "./TasksContainer";
 import TasksHeader from "./TasksHeader";
 import Container from "./Container";
+import { GlobalStyles } from "./GlobalStyles";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
@@ -60,6 +61,7 @@ function App() {
 
   return (
     <Container>
+      <GlobalStyles />
       <Header title="Lista zadań" />
       <Form addNewTask={addNewTask} />
       <TasksSection>
