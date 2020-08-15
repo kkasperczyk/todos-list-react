@@ -1,10 +1,10 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import { StyledTasksContainer } from "./styled";
 
-const TasksContainer = ({children}) => (
-    <div className="tasks__container">
-        {children}
-    </div>
+const TasksContainer = ({ children }) => (
+  <StyledTasksContainer>
+      {children}
+  </StyledTasksContainer>
 );
 
 export default TasksContainer;
