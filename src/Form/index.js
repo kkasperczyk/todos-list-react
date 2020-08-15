@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   FormContainer,
   FormHeader,
@@ -9,6 +9,12 @@ import {
 
 const Form = ({ addNewTask }) => {
   const [newTaskContent, setNewTaskContent] = useState("");
+
+  const inputRef = useRef(null);
+
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +27,8 @@ const Form = ({ addNewTask }) => {
 
     addNewTask(trimmedNewTaskContent);
     setNewTaskContent("");
+
+    focusInput();
   };
 
   return (
@@ -28,6 +36,7 @@ const Form = ({ addNewTask }) => {
       <FormHeader>Dodaj nowe zadanie</FormHeader>
       <FormMainContent>
         <FormInput
+          ref={inputRef}
           value={newTaskContent}
           onChange={({ target }) => setNewTaskContent(target.value)}
           autoFocus
