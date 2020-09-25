@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "./Form";
 import TaskList from "./TaskList";
 import Buttons from "./Buttons";
@@ -8,44 +8,19 @@ import TasksContainer from "./TasksContainer";
 import TasksHeader from "./TasksHeader";
 import Container from "../../common/Container";
 import { GlobalStyles } from "../../GlobalStyles";
-import { useTasks } from "../../useTasks";
 
 function Tasks() {
-  const [hideDone, setHideDone] = useState(false);
-
-  const toggleHideDone = () => {
-    setHideDone((hideDone) => !hideDone);
-  };
-
-  const {
-    tasks,
-    removeTask,
-    toggleTaskDone,
-    setAllDone,
-    addNewTask,
-  } = useTasks();
-
   return (
     <Container>
       <GlobalStyles />
       <Header title="Lista zadań" />
-      <Form addNewTask={addNewTask} />
+      <Form />
       <TasksSection>
         <TasksContainer>
           <TasksHeader title="Lista zadań" />
-          <Buttons
-            tasks={tasks}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            setAllDone={setAllDone}
-          />
+          <Buttons />
         </TasksContainer>
-        <TaskList
-          tasks={tasks}
-          hideDone={hideDone}
-          removeTask={removeTask}
-          toggleTaskDone={toggleTaskDone}
-        />
+        <TaskList />
       </TasksSection>
     </Container>
   );
